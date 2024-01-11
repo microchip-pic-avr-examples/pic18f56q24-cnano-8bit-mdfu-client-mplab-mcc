@@ -182,7 +182,7 @@ In this section, we will walkthrough how to run the examples that are housed in 
 **Bootloader Operation after initial programming**
 
 After initial programming, the LED should be held on.
-[![MDFU_BootMode](images\PIC16F18446_BootMode.png)](images\PIC16F18446_BootMode.png)
+[![MDFU_BootMode](images\PIC18F56Q24_BootMode.png)](images\PIC18F56Q24_BootMode.png)
 
 **Application Operation**
 1. Open the Application Project that is configured for your selected verification scheme.
@@ -223,7 +223,7 @@ Right click, then select Clean and Build
 
 **Application Has Been Updated Successfully**
 
-[![MDFU_AppMode](images\PIC16F18446_AppMode.gif)](images\PIC16F18446_AppMode.gif)
+[![MDFU_AppMode](images\PIC18F56Q24_AppMode.gif)](images\PIC18F56Q24_AppMode.gif)
 
 ## Summary
 
