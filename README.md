@@ -32,10 +32,11 @@ The Microchip Device Firmware Update (MDFU) is a device firmware update ecosyste
 
 - PIC18F56Q24 Curiosity Nano [(EV01E86A)](https://www.microchip.com/en-us/development-tool/ev01e86a)
 
-[![PIC16F18446_CNano](images\230928-mcu8-photo-ev01e86a-front-transparent.png)](images\230928-mcu8-photo-ev01e86a-front-transparent.png)
+[![PIC18F56Q24_CNano](images\230928-mcu8-photo-ev01e86a-front-transparent.png)](images\230928-mcu8-photo-ev01e86a-front-transparent.png)
 
 ---
 ## Setup
+
 The following project setup steps have been followed for each example project pair. If something goes wrong in running these examples, validate that the settings in your project are consistent with the options seen in this section.
 
 ### Client Setup
@@ -163,8 +164,6 @@ In this section, we will walkthrough how to run the examples that are housed in 
 
 1. Open the MDFU Client Project.
 
-[![OpenMDFU](images\openBtnMDFU.png)](images\openBtnMDFU.png)
-
 [![OpenMDFUProject](images\openProjectMDFU.png)](images\openProjectMDFU.png)
 
 2. Set MDFU Client Project as Main Project.
@@ -177,7 +176,7 @@ In this section, we will walkthrough how to run the examples that are housed in 
 
 4. Program the MDFU Client Project
 
-[![ProgramMDFU](images\ProgramMDFU.png)](images\ProgramMDFU.png)
+[![ProgramMDFU](images\ProgramMDFU.PNG)](images\ProgramMDFU.PNG)
 
 **Bootloader Operation after initial programming**
 
@@ -186,8 +185,6 @@ After initial programming, the LED should be held on.
 
 **Application Operation**
 1. Open the Application Project that is configured for your selected verification scheme.
-
-[![OpenApp](images\openBtnApp.png)](images\openBtnApp.png)
 
 [![OpenAppProject](images\openProjectApp.png)](images\openProjectApp.png)
 
