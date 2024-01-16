@@ -19,13 +19,13 @@ The Microchip Device Firmware Update (MDFU) is a device firmware update ecosyste
 ---
 ## Software Used
 
-MPLAB® X IDE 6.15.0 [(MPLAB® X IDE 6.15)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic16f18446-cnano-8bit-mdfu-client-mplab-mcc-github)<br>
-MPLAB® XC8 2.45.0 [(MPLAB® XC8 2.45)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic16f18446-cnano-8bit-mdfu-client-mplab-mcc-github)<br>
-MPLAB® Code Configurator (MCC) 5.4.1 [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)<br>
-MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)<br>
-Python 3.8 or later [(Python)](https://www.python.org/downloads/)<br>
-pyfwimagebuilder v1.0.1.14 [(pyfwimagebuilder)](https://pypi.org/project/pyfwimagebuilder/)<br>
-pymdfu v1.0.1.5 [(pymdfu)](https://pypi.org/project/pymdfu/)<br>
+- [MPLAB® X IDE 6.15.0](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic16f18446-cnano-8bit-mdfu-client-mplab-mcc-github)
+- [MPLAB® XC8 2.45.0](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic16f18446-cnano-8bit-mdfu-client-mplab-mcc-github)
+- [MPLAB® Code Configurator (MCC) 5.4.1](https://www.microchip.com/mplab/mplab-code-configurator)
+- [MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs](https://www.microchip.com/mplab/mplab-code-configurator)
+- [Python 3.8 or later](https://www.python.org/downloads/)
+- [pyfwimagebuilder v1.0.1.14](https://pypi.org/project/pyfwimagebuilder/)
+- [pymdfu v1.0.1.5](https://pypi.org/project/pymdfu/)
 
 ---
 ## Hardware Used
@@ -227,3 +227,13 @@ Right click, then select Clean and Build
 ## Summary
 
 This repository demonstrates how to configure the 8-Bit MDFU Client library in MCC to enable device firmware updates over UART on a PIC18F56Q24 Curiosity Nano.
+
+## Contents
+
+- [Back to Related Documentation](#related-documentation)
+- [Back to Software Used](#software-used)
+- [Back to Hardware Used](#hardware-used)
+- [Back to Setup](#setup)
+- [Back to Operation](#operation)
+- [Back to Summary](#summary)
+- [Back to Top](#getting-started-with-the-8-bit-mdfu-client-for-pic18f56q24-using-mplab®-x)
