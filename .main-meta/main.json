@@ -38,13 +38,23 @@
         },
         "author": "Priyanka Abhijit Tamhankar",
         "peripherals": [
-            "UART"
+            "UART",
+            "Memory Module"
         ],
         "keywords": [
             "Melody",
             "MCC Melody",
             "Curiosity",
-			"Curiosity Nano"
+			"Curiosity Nano",
+            "Bootloader",
+            "Memory",
+            "Serial Communication",
+            "EUSART",
+            "Virtual COM Port",
+            "Microchip Device Firmware Update",
+            "8-bit MDFU Client",
+            "MDFU",
+            "File Transfer Protocol"
         ],
         "additionalData": {
             "longDescription": {
