@@ -37,7 +37,7 @@ This example will demonstrate:
 
 - PIC18F56Q24 Curiosity Nano [(EV01E86A)](https://www.microchip.com/en-us/development-tool/ev01e86a)
 
-[![PIC18F56Q24_CNano](images\230928-mcu8-photo-ev01e86a-front-transparent.PNG)](images\230928-mcu8-photo-ev01e86a-front-transparent.PNG)
+[![PIC18F56Q24_CNano](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)
 
 ---
 ## Setup
@@ -45,27 +45,27 @@ This example will demonstrate:
 The following project setup is the same for all the example project pairs. If something goes wrong while running these examples, confirm that the settings in the projects are consistent with the options seen in this section.
 
 ### Client Setup
-[![mdfu-builder](images\ProjectConfigurationOverview.PNG)](images\ProjectConfigurationOverview.PNG)
+[![mdfu-builder](images/ProjectConfigurationOverview.PNG)](images/ProjectConfigurationOverview.PNG)
 
 **Configuration Bits**
 - External Oscillator Selection bits: Oscillator not enabled
 - Reset Oscillator Selection bits: HFINTOSC with HFFRQ = 64 MHz and CDIV = 1:1 
 
-[![CFG](images\ConfigBitsSetup.PNG)](images\ConfigBitsSetup.PNG)
+[![CFG](images/ConfigBitsSetup.PNG)](images/ConfigBitsSetup.PNG)
 
 **Clock Control**
 - Clock Source: HFINTOSC
 - HF Internal Clock: 8_MHz
 - Clock Divider: 1
 
-[![CLK](images\ClockSetup.PNG)](images\ClockSetup.PNG)
+[![CLK](images/ClockSetup.PNG)](images/ClockSetup.PNG)
 
 **NVM**
 - Generate Flash APIs: Enabled
 - Generate EEPROM APIs: Enabled
 - Generate Device ID APIs: Enabled
 
-[![NVM](images\NVMSetup.PNG)](images\NVMSetup.PNG)
+[![NVM](images/NVMSetup.PNG)](images/NVMSetup.PNG)
 
 **UART**
 - Custom Name: UART2
@@ -79,7 +79,7 @@ The following project setup is the same for all the example project pairs. If so
 - Redirect Printf to UART: Disabled
 - Interrupt Driven: Disabled
 
-[![UART](images\UARTDriverSetup.PNG)](images\UARTDriverSetup.PNG)
+[![UART](images/UARTDriverSetup.PNG)](images/UARTDriverSetup.PNG)
 
 **UART PLIB**
 - Actual Baud Rate: 9615.385
@@ -88,13 +88,13 @@ The following project setup is the same for all the example project pairs. If so
 - Enable UART: Enable
 - Enable Transmit: Enabled
 
-[![UART_PLIB](images\UARTPLIBSetup.PNG)](images\UARTPLIBSetup.PNG)
+[![UART_PLIB](images/UARTPLIBSetup.PNG)](images/UARTPLIBSetup.PNG)
 
 **UART Pins**
 - UART TX: RB5
 - UART RX: RB4
 
-[![UART_Pins](images\UARTPortsSetup.PNG)](images\UARTPortsSetup.PNG)
+[![UART_Pins](images/UARTPortsSetup.PNG)](images/UARTPortsSetup.PNG)
 
 **8-Bit MDFU Client**
 - Communication Protocol: UART
@@ -106,35 +106,35 @@ The following project setup is the same for all the example project pairs. If so
 
 *Example for CRC32 Verification*
 
-[![MDFU](images\MDFUClientSetup.PNG)](images\MDFUClientSetup.PNG)
+[![MDFU](images/MDFUClientSetup.PNG)](images/MDFUClientSetup.PNG)
 
 **8-Bit MDFU Client I/O**
 - BOOT INDICATE: RF2
 - BOOT ENTRY: RF3
 
-[![IO-Pins](images\IOPortSetup.PNG)](images\IOPortSetup.PNG)
+[![IO-Pins](images/IOPortSetup.PNG)](images/IOPortSetup.PNG)
 - BOOT INDICATE: Start High
 - BOOT ENTRY: Weak Pullup
 
-[![IO-Settings](images\IOPinsSetup.PNG)](images\IOPinsSetup.PNG)
+[![IO-Settings](images/IOPinsSetup.PNG)](images/IOPinsSetup.PNG)
 
 **8-Bit MDFU Client Project Properties**
 - ROM Ranges: This option is configured based on the start address of the application
 - For example, if the application starts at 0x2000 then this value will reflect as `0-1FFF`
 
-[![IO-Settings](images\MemoryModelSettings.PNG)](images\MemoryModelSettings.PNG)
+[![IO-Settings](images/MemoryModelSettings.PNG)](images/MemoryModelSettings.PNG)
 
 ---
 ### Application Setup
-[![app-builder](images\AppConfigurationOverview.PNG)](images\AppConfigurationOverview.PNG)
+[![app-builder](images/AppConfigurationOverview.PNG)](images/AppConfigurationOverview.PNG)
 
 **I/O Pins**
 - GPIO Output: RF2
 
-[![app_io](images\AppPortSetup.PNG)](images\AppPortSetup.PNG)
+[![app_io](images/AppPortSetup.PNG)](images/AppPortSetup.PNG)
 - Custom Name: LED
 
-[![app_io_settings](images\LEDSetup.PNG)](images\LEDSetup.PNG)
+[![app_io_settings](images/LEDSetup.PNG)](images/LEDSetup.PNG)
 
 **Project Properties**
 
@@ -142,7 +142,7 @@ Linker Additional Options
 - Codeoffset: 0x<APP_START> = 0x2000
 - Checksum: Dependant on the verification scheme
 
-[![app_offset](images\AppOffset.PNG)](images\AppOffset.PNG)
+[![app_offset](images/AppOffset.PNG)](images/AppOffset.PNG)
 
 Note:*Check the table below to understand how the CRC32 option must be configured in the application projects*
 
@@ -161,7 +161,7 @@ Fill Flash Memory
 - Increment/Decrement: No Incrementing
 - Memory address range: 0x<APP_START>:0x<FLASH_END> = 0x2000:0xFFFF
 
-[![app_fill](images\AppFill.PNG)](images\AppFill.PNG)
+[![app_fill](images/AppFill.PNG)](images/AppFill.PNG)
 
 ## Operation
 In this section, we will walkthrough how to run the examples in this repository. This example shows how to execute the CRC32 verification example and update the device flash memory with the CRC32 application image to demonstrate a successful device firmware update (DFU).
@@ -170,40 +170,40 @@ In this section, we will walkthrough how to run the examples in this repository.
 
 1. Open the MDFU Client Project.
 
-[![OpenMDFUProject](images\openProjectMDFU.png)](images\openProjectMDFU.png)
+[![OpenMDFUProject](images/openProjectMDFU.png)](images/openProjectMDFU.png)
 
 2. Set MDFU Client Project as Main Project.
 
-[![OpenMDFUProject](images\setAsMainProject.png)](images\setAsMainProject.png)
+[![OpenMDFUProject](images/setAsMainProject.png)](images/setAsMainProject.png)
 
 3. Right click, then select Clean and Build.
 
-[![CleanBuild](images\CleanAndBuildMDFU.png)](images\CleanAndBuildMDFU.png)
+[![CleanBuild](images/CleanAndBuildMDFU.png)](images/CleanAndBuildMDFU.png)
 
 4. Program the MDFU Client Project
 
-[![ProgramMDFU](images\ProgramMDFU.PNG)](images\ProgramMDFU.PNG)
+[![ProgramMDFU](images/ProgramMDFU.PNG)](images/ProgramMDFU.PNG)
 
 **Bootloader Operation After Initial Programming**
 
 After the initial programming, the LED must be on.
 
-[![MDFU_BootMode](images\PIC18F56Q24_BootMode.png)](images\PIC18F56Q24_BootMode.png)
+[![MDFU_BootMode](images/PIC18F56Q24_BootMode.png)](images/PIC18F56Q24_BootMode.png)
 
 **Application Operation**
 1. Open the Application Project that is configured for your selected verification scheme.
 
-[![OpenAppProject](images\openProjectApp.png)](images\openProjectApp.png)
+[![OpenAppProject](images/openProjectApp.png)](images/openProjectApp.png)
 
 2. Set the application project as the Main Project.
 
-[![MainAppProject](images\setAppAsMainProject.png)](images\setAppAsMainProject.png)
+[![MainAppProject](images/setAppAsMainProject.png)](images/setAppAsMainProject.png)
 
 3. Build the required Application project.
 
 Right click, then select Clean and Build
 
-[![CleanBuild_App](images\CleanAndBuildApp.png)](images\CleanAndBuildApp.png)
+[![CleanBuild_App](images/CleanAndBuildApp.png)](images/CleanAndBuildApp.png)
 
 4. Build the Application Image File using **pyfwimagebuilder**.
 
@@ -213,7 +213,7 @@ Right click, then select Clean and Build
 
 `pyfwimagebuilder build -i "application_hex_file.hex"  -c "mdfu_config_file.toml" -o output.img`
 
-[![build_img](images\BuildTheImage.PNG)](images\BuildTheImage.PNG)
+[![build_img](images/BuildTheImage.PNG)](images/BuildTheImage.PNG)
 
 5. Use the **pymdfu** host tool to transfer the application image file to the bootloader.
 
@@ -223,11 +223,11 @@ Right click, then select Clean and Build
 
 `pymdfu update serial ./crc32.img --baudrate 9600 --port COM##`
 
-[![transfer_img](images\SendTheImage.PNG)](images\SendTheImage.PNG)
+[![transfer_img](images/SendTheImage.PNG)](images/SendTheImage.PNG)
 
 **Application Has Been Updated Successfully**
 
-[![MDFU_AppMode](images\PIC18F56Q24_AppMode.gif)](images\PIC18F56Q24_AppMode.gif)
+[![MDFU_AppMode](images/PIC18F56Q24_AppMode.gif)](images/PIC18F56Q24_AppMode.gif)
 
 ## Summary
 
