@@ -2,17 +2,17 @@
 
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Getting Started With the 8-bit MDFU Client for PIC18F56Q24 Using MPLAB® X
+# Getting Started With the 8-bit MDFU Client for PIC18F56Q24 Using MPLAB X
 
-This is an example on how to use the MPLAB Code Configurator (MCC) generated code for configuring some basic Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation Board.
+This is an example on how to use the MPLAB Code Configurator (MCC) generated code for configuring several basic Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation Board.
 
-The Microchip Device Firmware Update (MDFU) is a device firmware update ecosystem that uses a device agnostic host application to update the application firmware. The application image that is loaded into the host follows a custom file format that includes the device and application-specific parameters needed to perform the update. This repository provides the basic starting point to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano development board and also provides instructions for running the examples.
+The Microchip Device Firmware Update (MDFU) is a device firmware update ecosystem that uses a device agnostic host application to update the application firmware. The application image that is loaded into the host follows a custom file format that includes the device and application-specific parameters needed to perform the update. This repository provides the basic starting point to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano Base for Click boards™ and also provides instructions for running the examples.
 
 This example will demonstrate:
 - How to configure the 8-Bit MDFU Client Library in MCC Melody for different verification schemes
 - How to create a simple Blinky LED application
-- How to use [`pyfwimagebuilder`](https://pypi.org/project/pyfwimagebuilder/) command line interface to convert application hex file into application image
-- How to use [`pymdfu`](https://pypi.org/project/pymdfu/) command line interface to update the application firmware
+- How to use the [`pyfwimagebuilder`](https://pypi.org/project/pyfwimagebuilder/) command line interface to convert application hex file into the application image
+- How to use the [`pymdfu`](https://pypi.org/project/pymdfu/) command line interface to update the application firmware
 ---
 ## Related Documentation
 
@@ -24,10 +24,10 @@ This example will demonstrate:
 ---
 ## Software Used
 
-- [MPLAB® X IDE 6.15.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
-- [MPLAB® XC8 2.45.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers)
-- [MPLAB® Code Configurator (MCC) 5.4.1](https://www.microchip.com/mplab/mplab-code-configurator)
-- [MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs](https://www.microchip.com/mplab/mplab-code-configurator)
+- [MPLAB X IDE 6.15.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+- [MPLAB XC8 2.45.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers)
+- [MPLAB Code Configurator (MCC) 5.4.1](https://www.microchip.com/mplab/mplab-code-configurator)
+- [MPLAB Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs](https://www.microchip.com/mplab/mplab-code-configurator)
 - [Python 3.8 or later](https://www.python.org/downloads/)
 - [pyfwimagebuilder v1.0.1.14](https://pypi.org/project/pyfwimagebuilder/)
 - [pymdfu v1.0.1.5](https://pypi.org/project/pymdfu/)
