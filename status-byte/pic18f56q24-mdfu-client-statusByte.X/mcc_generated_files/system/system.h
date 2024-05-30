@@ -5,10 +5,13 @@
  * 
  * @defgroup systemdriver System Driver
  * 
- * @brief This is the generated header file for the System driver.
+ * @brief This file contains the API prototype for the System Driver.
  *
- * @version Driver Version 1.0.1
+ * @version Driver Version 1.0.2
+ *
+ * @version Package Version 1.0.2
 */
+
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -33,20 +36,17 @@
 #ifndef SYSTEM_H
 #define	SYSTEM_H
 
-/**
-  Section: Included Files
-*/
 #include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "config_bits.h"
-#include "../system/clock.h"
 #include "../system/pins.h"
 #include "../nvm/nvm.h"
 #include "../uart/uart2.h"
 #include "../system/mvio/vddio2.h"
 #include "../system/interrupt.h"
 #include "../bootloader/library/core/bl_core.h"
+#include "../system/clock.h"
 
 /**
  * @ingroup systemdriver
