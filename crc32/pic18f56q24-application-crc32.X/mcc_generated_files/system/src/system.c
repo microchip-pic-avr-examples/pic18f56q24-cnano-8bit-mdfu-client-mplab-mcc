@@ -7,7 +7,9 @@
  * 
  * @brief This file contains the API implementation for the System driver.
  *
- * @version Driver Version 1.0.1
+ * @version Driver Version 1.0.2
+ *
+ * @version Package Version 1.0.2
 */
 
 /*
@@ -31,14 +33,7 @@
     THIS SOFTWARE.
 */
 
- /**
-   Section: Included Files
- */
 #include "../system.h"
-
-/**
-  Section: Driver APIs
-*/
 
 
 void SYSTEM_Initialize(void)
@@ -48,5 +43,4 @@ void SYSTEM_Initialize(void)
     VDDIO2_Initialize();
     INTERRUPT_Initialize();
 }
-
 

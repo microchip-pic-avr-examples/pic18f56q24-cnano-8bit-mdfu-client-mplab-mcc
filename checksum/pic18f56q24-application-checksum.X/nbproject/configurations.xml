@@ -69,11 +69,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.45</languageToolchainVersion>
+        <languageToolchainVersion>2.46</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.23.425"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.25.433"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -139,6 +139,7 @@
       <HI-TECH-LINK>
         <property key="additional-options-checksum"
                   value="2000-FFFD@FFFE,width=-2,algorithm=2"/>
+        <property key="additional-options-checksumAVR" value=""/>
         <property key="additional-options-code-offset" value="0x2000"/>
         <property key="additional-options-command-line" value=""/>
         <property key="additional-options-errata" value=""/>
@@ -312,11 +313,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.45</languageToolchainVersion>
+        <languageToolchainVersion>2.46</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.23.425"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.25.433"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -382,6 +383,7 @@
       <HI-TECH-LINK>
         <property key="additional-options-checksum"
                   value="2000-FFFD@FFFE,width=-2,algorithm=2"/>
+        <property key="additional-options-checksumAVR" value=""/>
         <property key="additional-options-code-offset" value="0x2000"/>
         <property key="additional-options-command-line" value=""/>
         <property key="additional-options-errata" value=""/>
