@@ -5,10 +5,13 @@
  * 
  * @ingroup config_bitsdriver
  * 
- * @brief This is the generated Device Configuration bits file.
+ * @brief This file contains the API implementation for the Device Configuration Bits driver.
  *
- * @version Driver Version 1.0.0
+ * @version Driver Version 1.0.1
+ *
+ * @version Package Version 1.0.2
 */
+
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -59,7 +62,6 @@
 #pragma config PPS1WAY = ON     // PPSLOCK bit One-Way Set Enable bit->PPSLOCKED bit can be cleared and set only once; PPS registers remain locked after one clear/set cycle
 #pragma config STVREN = ON     // Stack Full/Underflow Reset Enable bit->Stack full/underflow will cause Reset
 #pragma config LVP = ON     // Low Voltage Programming Enable bit->Low voltage programming enabled. MCLR/VPP pin function is MCLR. MCLRE configuration bit is ignored
-#pragma config DEBUG = OFF     // Debug enable bit->Background Debugger disabled
 #pragma config XINST = OFF     // Extended Instruction Set Enable bit->Extended Instruction Set and Indexed Addressing Mode disabled
 #pragma config ZCD1 = OFF     // ZCD1 Disable bit->ZCD1 module is disabled. ZCD1 can be enabled by setting the ZCDSEN bit of ZCDCON
 
