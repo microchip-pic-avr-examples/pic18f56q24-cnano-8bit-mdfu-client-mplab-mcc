@@ -105,9 +105,11 @@ The following project setup is the same for all the example project pairs. If so
 - I/O Pin Entry: Enabled
 - Memory Verification: Assigned Based on Example Project Naming Convention
 
-*Example for CRC32 Verification*
+**Tip**: Easiest way to get correct device ID is to connect your device and use the "Refresh Debug Tool Status" button in the Dashboard left panel on MPLAB X IDE. Upon clicking on the button and selecting correct PKOB Nano, it prints out the device ID with other information in the output window.
 
-[![MDFU](images/MDFUClientSetup.PNG)](images/MDFUClientSetup.PNG)
+[![Refresh Debug Tool Status](images/RefreshDebugToolStatus.png)](images/RefreshDebugToolStatus.png)
+
+*Example for CRC32 Verification*
 
 **8-Bit MDFU Client I/O**
 - BOOT INDICATE: RF2
@@ -118,6 +120,27 @@ The following project setup is the same for all the example project pairs. If so
 - BOOT ENTRY: Weak Pullup
 
 [![IO-Settings](images/IOPinsSetup.PNG)](images/IOPinsSetup.PNG)
+
+**Updating Application Start Address**
+
+This is an important step to ensure that the bootloader and application FLASH sections are configured to provide maximum space for the application while decreasing the bootloader section to be as close to the memory consumed by the bootloader code as possible.
+
+- At this point, as mentioned in the 8-Bit MDFU Client section, the depends on the verification method used in the project. Initially, configure application start to be closer to the MAXSIZE to allow sufficient memory for flashing bootloader code. Do not exceed (MAXSIZE - 4).
+[![Max Boot Size](images/MaxBootSize.png)](images/MaxBootSize.png)
+
+- After this, upon generating and performing clean and build, the bytes of memory consumed by bootloader can be observed under memory summary section in output window.
+
+[![Build Memory Consumption](images/BuildMemoryConsumption.png)](images/BuildMemoryConsumption.png)
+
+- Next step is to update the application start address to be the next page start address in FLASH after the memory consumed by bootloader code. 
+
+- Since in this example, code consumes 0x168B bytes, the application start address can be configured to 0x2000. 
+
+[![Updated Boot Size](images/UpdatedBootSize.png)](images/UpdatedBootSize.png)
+
+- After updating the application start address, final configurations must be as mentioned below 
+
+[![MDFU](images/MDFUClientSetup.PNG)](images/MDFUClientSetup.PNG)
 
 **8-Bit MDFU Client Project Properties**
 - ROM Ranges: This option is configured based on the start address of the application
