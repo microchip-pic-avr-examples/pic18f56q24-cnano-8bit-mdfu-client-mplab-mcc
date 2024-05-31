@@ -2,7 +2,7 @@
 
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Getting Started With the 8-bit MDFU Client for PIC18F56Q24 Using MPLAB X
+# Getting Started With the 8-bit MDFU Client for PIC18F56Q24 using MPLAB&reg; X
 
 This is an example on how to use the MPLAB Code Configurator (MCC) generated code for configuring several basic Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation Board.
 
@@ -105,7 +105,7 @@ The following project setup is the same for all the example project pairs. If so
 - I/O Pin Entry: Enabled
 - Memory Verification: Assigned Based on Example Project Naming Convention
 
-**Tip**: Easiest way to get correct device ID is to connect your device and use the "Refresh Debug Tool Status" button in the Dashboard left panel on MPLAB X IDE. Upon clicking on the button and selecting correct PKOB Nano, it prints out the device ID with other information in the output window.
+**Tip**: The easiest way to get the correct device ID is to connect your device and use the **Refresh Debug Tool Status** button on the Dashboard left panel in MPLAB X IDE. Upon clicking the button and selecting the correct PKOB Nano, in the Output window it prints out the device ID and other information.
 
 [![Refresh Debug Tool Status](images/RefreshDebugToolStatus.png)](images/RefreshDebugToolStatus.png)
 
@@ -125,16 +125,16 @@ The following project setup is the same for all the example project pairs. If so
 
 This is an important step to ensure that the bootloader and application FLASH sections are configured to provide maximum space for the application while decreasing the bootloader section to be as close to the memory consumed by the bootloader code as possible.
 
-- At this point, as mentioned in the 8-Bit MDFU Client section, the depends on the verification method used in the project. Initially, configure application start to be closer to the MAXSIZE to allow sufficient memory for flashing bootloader code. Do not exceed (MAXSIZE - 4).
+- At this point, as mentioned in the 8-Bit MDFU Client section, this depends on the verification method used in the project. Initially, configure the application start address to be closer to the MAXSIZE to allow sufficient memory for flashing the bootloader code. Do not exceed (MAXSIZE - 4)
 [![Max Boot Size](images/MaxBootSize.png)](images/MaxBootSize.png)
 
-- After this, upon generating and performing clean and build, the bytes of memory consumed by bootloader can be observed under memory summary section in output window.
+- After a clean and build, the bytes of memory consumed by bootloader can be observed under the Memory Summary section in the Output window
 
 [![Build Memory Consumption](images/BuildMemoryConsumption.png)](images/BuildMemoryConsumption.png)
 
-- Next step is to update the application start address to be the next page start address in FLASH after the memory consumed by bootloader code. 
+- Update the application start address to the start address of the next page in FLASH, following the memory allocation utilized by the bootloader code
 
-- Since in this example, code consumes 0x168B bytes, the application start address can be configured to 0x2000. 
+- Since in this example, the bootloader code consumes 0x168B bytes, the application start address can be configured to 0x2000 
 
 [![Updated Boot Size](images/UpdatedBootSize.png)](images/UpdatedBootSize.png)
 
@@ -168,7 +168,7 @@ Linker Additional Options
 
 [![app_offset](images/AppOffset.PNG)](images/AppOffset.PNG)
 
-Note:*Check the table below to understand how the CRC32 option must be configured in the application projects*
+**Note**:*Check the table below to understand how the CRC32 option must be configured in the application projects*
 
 |Verification Scheme | Checksum Setting |
 |---- |---- |
@@ -188,7 +188,7 @@ Fill Flash Memory
 [![app_fill](images/AppFill.PNG)](images/AppFill.PNG)
 
 ## Operation
-In this section, we will walkthrough how to run the examples in this repository. This example shows how to execute the CRC32 verification example and update the device flash memory with the CRC32 application image to demonstrate a successful device firmware update (DFU).
+In this section, we will walkthrough how to run the examples in this repository. This example shows how to execute the CRC32 verification example and update the device Flash memory with the CRC32 application image to demonstrate a successful device firmware update (DFU).
 
 **8-Bit MDFU Client Operation**
 
@@ -235,7 +235,7 @@ Right click, then select Clean and Build
 
 **Example Command:**
 
-`pyfwimagebuilder build -i "application_hex_file.hex"  -c "mdfu_config_file.toml" -o output.img`
+`pyfwimagebuilder build -i "application_hex_file.hex"  -c "bootloader_configuration.toml" -o output.img`
 
 [![build_img](images/BuildTheImage.PNG)](images/BuildTheImage.PNG)
 
