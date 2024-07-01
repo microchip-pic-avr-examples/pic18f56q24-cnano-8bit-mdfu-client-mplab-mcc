@@ -4,27 +4,27 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f56q24-cnano-8bit-mdfu-client-mplab-mcc",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "displayName": "Getting Started with the 8-Bit MDFU Client for PIC18F56Q24",
         "projectName": "pic18f56q24-cnano-8bit-mdfu-client-mplab-mcc",
         "shortDescription": "GitHub Example for the 8bit MDFU Client Library using PIC18F56Q24 with a CNANO board.",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.15.0"
+            "semverRange": ">=6.20.0"
         },
         "compiler": [
             {
                 "name": "XC8",
-                "semverRange": "^2.45.0"
+                "semverRange": "^2.46.0"
             }
         ],
         "dfp": {
             "name": "PIC18F-Q_DFP",
-            "semverRange": "^1.20.405"
+            "semverRange": "^1.25.433"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": "^5.4.1"
+            "semverRange": "^5.5.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -36,7 +36,7 @@
                 "versionRange": "*"
             }
         },
-        "author": "Priyanka Abhijit Tamhankar",
+        "author": "Microchip",
         "peripherals": [
             "UART",
             "Memory Module"
