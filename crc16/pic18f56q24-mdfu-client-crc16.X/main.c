@@ -7,11 +7,13 @@
  *
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version MAIN Driver Version 1.0.2
+ *
+ * @version Package Version: 3.1.2
  */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -40,7 +42,7 @@
 int main(void)
 {
     SYSTEM_Initialize();
-
+    BL_ExampleInitialize();
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     // Use the following macros to:
@@ -51,10 +53,14 @@ int main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
-    BL_ExampleInitialize();
 
     while (1)
     {
+        /**
+         *
+         * An example has been provided to you to demonstrate one way that
+         * the MDFU Client Library could be implemented.
+         */
         BL_Example();
     }
 }

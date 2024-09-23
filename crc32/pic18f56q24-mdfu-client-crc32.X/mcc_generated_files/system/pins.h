@@ -8,7 +8,7 @@
  * @brief This is generated driver header for pins. 
  *        This header file provides APIs for all pins selected in the GUI.
  *
- * @version Driver Version  3.1.0
+ * @version Driver Version  3.1.1
 */
 
 /*

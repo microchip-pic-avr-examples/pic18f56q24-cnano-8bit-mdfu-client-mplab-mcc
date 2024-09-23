@@ -1,0 +1,1 @@
+pyfwimagebuilder build -v debug -i ./dist/pro/production/pic18f56q24-application-crc16.X.production.hex -c ../pic18f56q24-mdfu-client-crc16.X/mcc_generated_files/bootloader/configurations/bootloader_configuration.toml -o new_application.img

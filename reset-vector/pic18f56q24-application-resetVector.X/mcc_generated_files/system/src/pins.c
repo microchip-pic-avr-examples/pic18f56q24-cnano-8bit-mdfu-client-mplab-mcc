@@ -8,7 +8,7 @@
  * @brief This is generated driver implementation for pins. 
  *        This file provides implementations for pin APIs for all pins selected in the GUI.
  *
- * @version Driver Version 3.1.0
+ * @version Driver Version 3.1.1
 */
 
 /*
@@ -46,6 +46,15 @@ void PIN_MANAGER_Initialize(void)
     LATD = 0x0;
     LATE = 0x0;
     LATF = 0x0;
+    /**
+    ODx registers
+    */
+    ODCONA = 0x0;
+    ODCONB = 0x0;
+    ODCONC = 0x0;
+    ODCOND = 0x0;
+    ODCONE = 0x0;
+    ODCONF = 0x0;
 
     /**
     TRISx registers
@@ -64,7 +73,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELB = 0xFF;
     ANSELC = 0x7;
     ANSELE = 0x7;
-    ANSELF = 0xFB;
+    ANSELF = 0xF3;
 
     /**
     WPUx registers
@@ -74,17 +83,8 @@ void PIN_MANAGER_Initialize(void)
     WPUC = 0x0;
     WPUD = 0x0;
     WPUE = 0x0;
-    WPUF = 0x0;
+    WPUF = 0x8;
 
-    /**
-    ODx registers
-    */
-    ODCONA = 0x0;
-    ODCONB = 0x0;
-    ODCONC = 0x0;
-    ODCOND = 0x0;
-    ODCONE = 0x0;
-    ODCONF = 0x0;
 
     /**
     SLRCONx registers

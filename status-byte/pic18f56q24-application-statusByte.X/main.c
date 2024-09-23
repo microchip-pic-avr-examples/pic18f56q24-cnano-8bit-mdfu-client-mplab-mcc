@@ -7,11 +7,13 @@
  *
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version MAIN Driver Version 1.0.2
+ *
+ * @version Package Version: 3.1.2
  */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+ï¿½ [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -32,10 +34,6 @@
  */
 #include "mcc_generated_files/system/system.h"
 #include "mcc_generated_files/timer/delay.h"
-#include <stdint.h>
-#ifdef __XC8__
-#include <xc.h>
-#endif
 
 #include <stdint.h>
 #ifdef __XC8__
@@ -71,5 +69,10 @@ int main(void)
     {
         LED_Toggle();
         DELAY_milliseconds(200);
+
+        if (BTN_GetValue() == 0U)
+        {
+            RESET();
+        }
     }
 }

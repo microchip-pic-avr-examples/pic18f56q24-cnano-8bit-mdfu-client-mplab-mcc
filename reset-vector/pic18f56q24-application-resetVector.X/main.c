@@ -7,7 +7,9 @@
  *
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version MAIN Driver Version 1.0.2
+ *
+ * @version Package Version: 3.1.2
  */
 
 /*
@@ -56,5 +58,11 @@ int main(void)
     {
         LED_Toggle();
         DELAY_milliseconds(200);
+
+        if (BTN_GetValue() == 0U)
+        {
+            RESET();
+        }
+
     }
 }

@@ -9,7 +9,7 @@
  *
  * @version Driver Version 2.0.4
  *
- * @version Package Version 4.3.6
+ * @version Package Version 4.3.7
 */
 
 /*
@@ -50,7 +50,7 @@ void CLOCK_Initialize(void)
         | (0 << _OSCEN_SOSCEN_POSN)   // SOSCEN disabled
         | (0 << _OSCEN_ADOEN_POSN)   // ADOEN disabled
         | (0 << _OSCEN_PLLEN_POSN);  // PLLEN disabled
-    OSCFRQ = (3 << _OSCFRQ_HFFRQ_POSN);  // HFFRQ 8_MHz
+    OSCFRQ = (8 << _OSCFRQ_HFFRQ_POSN);  // HFFRQ 64_MHz
     OSCTUNE = (0 << _OSCTUNE_TUN_POSN);  // TUN 0x0
     ACTCON = (0 << _ACTCON_ACTEN_POSN)   // ACTEN disabled
         | (0 << _ACTCON_ACTUD_POSN);  // ACTUD enabled

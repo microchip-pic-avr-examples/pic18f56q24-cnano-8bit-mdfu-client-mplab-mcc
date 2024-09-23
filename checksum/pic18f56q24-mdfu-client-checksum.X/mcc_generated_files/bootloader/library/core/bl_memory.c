@@ -1,5 +1,5 @@
 /**
- * © 2024 Microchip Technology Inc. and its subsidiaries.
+ * Â© 2024 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip
  * software and any derivatives exclusively with Microchip products.
@@ -29,9 +29,12 @@
 
 #include "bl_memory.h"
 
-/**@misradeviation{@advisory, 17.8} - The parameter is passed to this wrapper API to increment and
- * read bytes/words from consecutive memory locations. Assigning the value to a different local variable for
- * each API will increase redundancy.
+/**@misradeviation{@advisory, 17.8} - The parameter is passed to this wrapper API to decrement and
+ * write or erase bytes/words from consecutive memory locations until its value is zero.
+ * Assigning the value to a different local variable for each API will increase redundancy.
+ */
+/**@misradeviation{@advisory, 8.9} The static buffer will not be declared at local scope
+ * due to portability concerns between various architectures.
  */
 
 static uint16_t erasePageKey;
@@ -57,7 +60,7 @@ void BL_MemoryUnlockKeysClear(void)
 
 #if defined (BL_EEPROM_READ_ENABLED)
 
-bl_mem_result_t BL_EEPROMRead(eeprom_address_t address,eeprom_data_t * buffer,size_t length)
+bl_mem_result_t BL_EEPROMRead(eeprom_address_t address, eeprom_data_t * buffer, size_t length)
 {
     bl_mem_result_t result = BL_MEM_FAIL;
     NVM_StatusClear();
@@ -65,7 +68,7 @@ bl_mem_result_t BL_EEPROMRead(eeprom_address_t address,eeprom_data_t * buffer,si
     {
         result = BL_MEM_INVALID_ARG;
     }
-    else if ((length <= (size_t)0) || ((address + length) > (EEPROM_START_ADDRESS + EEPROM_SIZE))) //Check valid length
+    else if ((length <= (size_t) 0) || ((address + length) > (EEPROM_START_ADDRESS + EEPROM_SIZE))) //Check valid length
     {
         result = BL_MEM_INVALID_ARG;
     }
@@ -75,12 +78,12 @@ bl_mem_result_t BL_EEPROMRead(eeprom_address_t address,eeprom_data_t * buffer,si
     }
     else
     {
-        for (uint16_t index = 0;index < length;index ++)
+        for (uint16_t index = 0; index < length; index++)
         {
             buffer[index] = EEPROM_Read(address);
 
             /* cppcheck-suppress misra-c2012-17.8 */
-            address ++;
+            address++;
             while (NVM_IsBusy())
             {
 
@@ -102,7 +105,7 @@ bl_mem_result_t BL_EEPROMRead(eeprom_address_t address,eeprom_data_t * buffer,si
 
 #if defined (BL_EEPROM_WRITE_ENABLED)
 
-bl_mem_result_t BL_EEPROMWrite(eeprom_address_t address,eeprom_data_t * buffer,size_t length)
+bl_mem_result_t BL_EEPROMWrite(eeprom_address_t address, eeprom_data_t * buffer, size_t length)
 {
     bl_mem_result_t result = BL_MEM_FAIL;
     NVM_StatusClear();
@@ -110,7 +113,7 @@ bl_mem_result_t BL_EEPROMWrite(eeprom_address_t address,eeprom_data_t * buffer,s
     {
         result = BL_MEM_INVALID_ARG;
     }
-    else if ((length <= (size_t)0) || ((address + length) > (EEPROM_START_ADDRESS + EEPROM_SIZE)))//Check valid length
+    else if ((length <= (size_t) 0) || ((address + length) > (EEPROM_START_ADDRESS + EEPROM_SIZE)))//Check valid length
     {
         result = BL_MEM_INVALID_ARG;
     }
@@ -120,17 +123,17 @@ bl_mem_result_t BL_EEPROMWrite(eeprom_address_t address,eeprom_data_t * buffer,s
     }
     else
     {
-        for (uint16_t index = 0;index < length;index ++)
+        for (uint16_t index = 0; index < length; index++)
         {
 #if defined (_18FXXQ10_FAMILY_)
             NVM_UnlockKeySet(byteWordWriteKey);
 #else
             NVM_UnlockKeySet(byteWordWriteKey);
 #endif
-            EEPROM_Write(address,buffer[index]);
+            EEPROM_Write(address, buffer[index]);
             NVM_UnlockKeyClear();
             /* cppcheck-suppress misra-c2012-17.8 */
-            address ++;
+            address++;
             while (NVM_IsBusy())
             {
 
@@ -150,7 +153,7 @@ bl_mem_result_t BL_EEPROMWrite(eeprom_address_t address,eeprom_data_t * buffer,s
 }
 #endif
 
-bl_mem_result_t BL_FlashRead(flash_address_t address,flash_data_t * buffer,size_t length)
+bl_mem_result_t BL_FlashRead(flash_address_t address, flash_data_t * buffer, size_t length)
 {
     bl_mem_result_t result = BL_MEM_FAIL;
     NVM_StatusClear();
@@ -162,13 +165,13 @@ bl_mem_result_t BL_FlashRead(flash_address_t address,flash_data_t * buffer,size_
     {
         result = BL_MEM_INVALID_ARG;
     }
-    else if ((length <= (size_t)0) || ((address + length) > (PROGMEM_SIZE + (uint24_t)1)))//Check valid length
+    else if ((length <= (size_t) 0) || ((address + length) > (PROGMEM_SIZE + (uint24_t) 1)))//Check valid length
     {
         result = BL_MEM_INVALID_ARG;
     }
     else
     {
-        for (uint16_t index = 0;index <= length;index ++)
+        for (uint16_t index = 0; index <= length; index++)
         {
 #if defined (_18FXXQ10_FAMILY_)
             NVM_UnlockKeySet(readKey);
@@ -178,7 +181,7 @@ bl_mem_result_t BL_FlashRead(flash_address_t address,flash_data_t * buffer,size_
             buffer[index] = FLASH_Read(address);
 
             /* cppcheck-suppress misra-c2012-17.8 */
-            address ++;
+            address++;
             NVM_UnlockKeyClear();
             while (NVM_IsBusy())
             {
@@ -198,7 +201,11 @@ bl_mem_result_t BL_FlashRead(flash_address_t address,flash_data_t * buffer,size_
     return result;
 }
 
-bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size_t length) // using precompiled directives for differences in PIC18 and PIC16 impelmentation
+// Static Buffer Declared to Assist in writing blocks of any length upto 1 page
+/* cppcheck-suppress misra-c2012-8.9 */
+static flash_data_t writeBuffer[PROGMEM_PAGE_SIZE];
+
+bl_mem_result_t BL_FlashWrite(flash_address_t address, flash_data_t * buffer, size_t length) // using precompiled directives for differences in PIC18 and PIC16 implementation
 {
 
     bl_mem_result_t result = BL_MEM_FAIL;
@@ -206,7 +213,6 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
     uint16_t index;
     uint16_t counter = 0;
     flash_address_t pageStartAddress;
-    flash_data_t writeBuffer[PROGMEM_PAGE_SIZE];
 
     if (buffer == NULL)//Check the valid buffer
     {
@@ -216,7 +222,7 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
     {
         result = BL_MEM_INVALID_ARG;
     }
-    else if ((length <= (size_t)0) || ((address + length) > (PROGMEM_SIZE + (uint24_t)1)))//Check valid length
+    else if ((length <= (size_t) 0) || ((address + length) > (PROGMEM_SIZE + (uint24_t) 1)))//Check valid length
     {
         result = BL_MEM_INVALID_ARG;
     }
@@ -226,14 +232,14 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
         NVM_StatusClear();
         if (length < PROGMEM_PAGE_SIZE) //Check if length is less that program memory page size
         {
-            offset = FLASH_PageOffsetGet(address);//Get offset from start of the page consisting the address
-            pageStartAddress = FLASH_PageAddressGet(address);//Get start address of the page with the address
+            offset = FLASH_PageOffsetGet(address); //Get offset from start of the page consisting the address
+            pageStartAddress = FLASH_PageAddressGet(address); //Get start address of the page with the address
 
             //Read entire page from FLASH
-            for (index = 0;index < PROGMEM_PAGE_SIZE;index ++)
+            for (index = 0; index < PROGMEM_PAGE_SIZE; index++)
             {
-                writeBuffer[index] = FLASH_Read(pageStartAddress);//Write byte read from flash in buffer at index
-                pageStartAddress ++;
+                writeBuffer[index] = FLASH_Read(pageStartAddress); //Write byte read from flash in buffer at index
+                pageStartAddress++;
                 while (NVM_IsBusy())
                 {
 
@@ -251,24 +257,24 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
             if (result != BL_MEM_FAIL)
             {
                 //Append buffer elements at/from offset to the read page buffer
-                while (length != (size_t)0)
+                while (length != (size_t) 0)
                 {
-                    writeBuffer[offset] = buffer[counter];//Start writing offset onwards
-                    offset ++;
-                    counter ++;
+                    writeBuffer[offset] = buffer[counter]; //Start writing offset onwards
+                    offset++;
+                    counter++;
                     /* cppcheck-suppress misra-c2012-17.8 */
-                    length --;
+                    length--;
                 }
-                pageStartAddress = FLASH_PageAddressGet(address);//Get start address of the page with the address
+                pageStartAddress = FLASH_PageAddressGet(address); //Get start address of the page with the address
 
 #if defined (_18FXXQ10_FAMILY_)
                 NVM_UnlockKeySet(erasePageKey);
 #else
                 NVM_UnlockKeySet(erasePageKey);
 #endif
-                result = (bl_mem_result_t)FLASH_PageErase(pageStartAddress);//Erase page in flash
-                NVM_UnlockKeyClear();//Clear unlock key
-                if ((bl_mem_result_t)NVM_OK == result)
+                result = (bl_mem_result_t) FLASH_PageErase(pageStartAddress); //Erase page in flash
+                NVM_UnlockKeyClear(); //Clear unlock key
+                if ((bl_mem_result_t) NVM_OK == result)
                 {
                     //Write data to Flash row
 #if defined (_18FXXQ10_FAMILY_)
@@ -276,11 +282,11 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
 #else
                     NVM_UnlockKeySet(rowWriteKey);
 #endif
-                    result = (bl_mem_result_t)FLASH_RowWrite(pageStartAddress,writeBuffer);
+                    result = (bl_mem_result_t) FLASH_RowWrite(pageStartAddress, writeBuffer);
                     NVM_UnlockKeyClear();
                 }
 
-                if ((bl_mem_result_t)NVM_OK == result)
+                if ((bl_mem_result_t) NVM_OK == result)
                 {
                     result = BL_MEM_PASS;
                 }
@@ -292,16 +298,16 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
         }
         if (length == PROGMEM_PAGE_SIZE)
         {
-            pageStartAddress = FLASH_PageAddressGet(address);//Get start address of the page with the address
+            pageStartAddress = FLASH_PageAddressGet(address); //Get start address of the page with the address
 
 #if defined (_18FXXQ10_FAMILY_)
             NVM_UnlockKeySet(erasePageKey);
 #else
             NVM_UnlockKeySet(erasePageKey);
 #endif
-            result = (bl_mem_result_t)FLASH_PageErase(pageStartAddress);//Erase page in flash
+            result = (bl_mem_result_t) FLASH_PageErase(pageStartAddress); //Erase page in flash
             NVM_UnlockKeyClear();
-            if ((bl_mem_result_t)NVM_OK == result)
+            if ((bl_mem_result_t) NVM_OK == result)
             {
                 //Write data to Flash row
 #if defined (_18FXXQ10_FAMILY_)
@@ -309,7 +315,7 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
 #else
                 NVM_UnlockKeySet(rowWriteKey);
 #endif
-                result = (bl_mem_result_t)FLASH_RowWrite(pageStartAddress,buffer);
+                result = (bl_mem_result_t) FLASH_RowWrite(pageStartAddress, buffer);
                 NVM_UnlockKeyClear();
             }
             else
@@ -317,7 +323,7 @@ bl_mem_result_t BL_FlashWrite(flash_address_t address,flash_data_t * buffer,size
                 result = BL_MEM_FAIL;
             }
 
-            if ((bl_mem_result_t)NVM_OK == result)
+            if ((bl_mem_result_t) NVM_OK == result)
             {
                 result = BL_MEM_PASS;
             }

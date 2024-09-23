@@ -2,48 +2,44 @@
 
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Getting Started With the 8-bit MDFU Client for PIC18F56Q24 using MPLAB&reg; X
+# Getting Started With the 8-Bit MDFU Client for PIC18F56Q24 Using MPLAB&reg; X
 
-This is an example on how to use the MPLAB Code Configurator (MCC) generated code for configuring several basic Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation Board.
+This example demonstrates how to utilize MPLAB Code Configurator (MCC) generated code to set up various Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation board.
 
-The Microchip Device Firmware Update (MDFU) is a device firmware update ecosystem that uses a device agnostic host application to update the application firmware. The application image that is loaded into the host follows a custom file format that includes the device and application-specific parameters needed to perform the update. This repository provides the basic starting point to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano Base for Click boards™ and also provides instructions for running the examples.
+The MDFU is a firmware update system that employs a device-independent host application to update application firmware. The application image loaded into the host adheres to a custom file format, incorporating device and application-specific parameters necessary for the update. This repository offers a foundational setup to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano Base for Click boards™, along with instructions for executing the examples.
 
-This example will demonstrate:
+This example demonstrates:
 - How to configure the 8-Bit MDFU Client library in MCC Melody for different verification schemes
 - How to create a simple Blinky LED application
-- How to use the [`pyfwimagebuilder`](https://pypi.org/project/pyfwimagebuilder/) command line interface to convert application hex file into the application image
+- How to use the [`pyfwimagebuilder`](https://pypi.org/project/pyfwimagebuilder/) command line interface to convert the application hex file into an application image
 - How to use the [`pymdfu`](https://pypi.org/project/pymdfu/) command line interface to update the application firmware
----
+
 ## Related Documentation
 
 - [PIC18F56Q24 Family Product Page](https://www.microchip.com/en-us/product/PIC18F56Q24)
-- [8-Bit MDFU Client v1.0.0 Release Notes](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=RELEASE_NOTES_8BIT_MDFU_CLIENT_LIBRARY&version=latest&redirect=true)
-- [8-Bit MDFU Client v1.0.0 Getting Started Guide](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=8BIT_MDFU_CLIENT&version=latest&redirect=true)
-- [8-Bit MDFU Client v1.0.0 API Documentation](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=8BIT_MDFU_CLIENT&version=latest&redirect=true)
-- [8-Bit MDFU Client v1.0.0 Known Issues List](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=KNOWN_ISSUES_8BIT_MDFU_CLIENT&version=latest&redirect=true)
+- [8-Bit MDFU Client v1.1.0 Release Notes](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=RELEASE_NOTES_8BIT_MDFU_CLIENT_LIBRARY&version=latest&redirect=true)
+- [Getting Started Document, API Reference and Update Image Specification](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=8BIT_MDFU_CLIENT&version=latest&redirect=true)
+- [8-Bit MDFU Client Known Issues List](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=KNOWN_ISSUES_8BIT_MDFU_CLIENT&version=latest&redirect=true)
 
----
 ## Software Used
 
 - [MPLAB X IDE 6.20.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
-- [MPLAB XC8 2.46.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers)
+- [MPLAB XC8 2.50.0](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers)
 - [MPLAB Code Configurator (MCC) 5.5.1](https://www.microchip.com/mplab/mplab-code-configurator)
-- [MPLAB Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs](https://www.microchip.com/en-us/tools-resources/develop/libraries/microchip-libraries-for-applications)
+- [MPLAB Code Configurator (MCC) Device Libraries PIC10/12/16/18 microcontrollers (MCUs)](https://www.microchip.com/en-us/tools-resources/develop/libraries/microchip-libraries-for-applications)
 - [Python 3.8 or later](https://www.python.org/downloads/)
-- [pyfwimagebuilder v1.0.1.14](https://pypi.org/project/pyfwimagebuilder/)
-- [pymdfu v1.0.1.5](https://pypi.org/project/pymdfu/)
+- [pyfwimagebuilder v1.0.1](https://pypi.org/project/pyfwimagebuilder/)
+- [pymdfu v2.4.0](https://pypi.org/project/pymdfu/)
 
----
 ## Hardware Used
 
 - PIC18F56Q24 Curiosity Nano [(EV01E86A)](https://www.microchip.com/en-us/development-tool/ev01e86a)
 
-[![PIC18F56Q24_CNano](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)
+[![PIC18F56Q24_CNano](images/230928-MCU8-PHOTO-EV01E86A-Front-Transparent.png)](images/230928-MCU8-PHOTO-EV01E86A-Front-Transparent.png)
 
----
 ## Setup
 
-MDFU Client and Application projects have to be configured according to [Client Setup](#client-setup) and [Application Setup](#application-setup). The following project setup is the same for all the example project pairs. If something goes wrong while running these examples, confirm that the settings in the respective projects are consistent with the options seen in the following sections.
+The following project setup steps demonstrate the basic configuration for setting up the 8-Bit MDFU Client with Universal Asynchronous Receiver-Transmitter (UART) communication. The configuration bits, clock, Non-Volatile Memory (NVM), and General Purpose Input/Output (GPIO) settings will be consistent across all examples in this repository and any deviations from this setup due to the chosen communication protocol will be described individually later in this section.
 
 ### [Client Setup](#client-setup)
 [![mdfu-builder](images/ProjectConfigurationOverview.PNG)](images/ProjectConfigurationOverview.PNG)
@@ -56,7 +52,7 @@ MDFU Client and Application projects have to be configured according to [Client 
 
 **Clock Control**
 - Clock Source: HFINTOSC
-- HF Internal Clock: 8_MHz
+- HF Internal Clock: 8_MHz or higher
 - Clock Divider: 1
 
 [![CLK](images/ClockSetup.PNG)](images/ClockSetup.PNG)
@@ -68,8 +64,26 @@ MDFU Client and Application projects have to be configured according to [Client 
 
 [![NVM](images/NVMSetup.PNG)](images/NVMSetup.PNG)
 
+**8-Bit MDFU Client**
+
+This section will guide you through the setup process for UART communication. For more details on configuring and operating other communication protocols, please refer to the pages listed below:
+- [SPI Communication](spi/Readme.md)
+
+**8-Bit MDFU Client with UART Communication**
+
+- Communication Protocol: SERCOM
+- Application Start Address: Different for each project based on the verification selected
+- Device ID: 0x7920 (automatically added)
+- I/O Pin Indicator: Enabled
+- I/O Pin Entry: Enabled
+- Memory Verification: Assigned based on the example project naming convention
+
+> **Tip**: This example is for CRC32 verification.
+
+[![MDFU](images/MDFUClientSetup.PNG)](images/MDFUClientSetup.PNG)
+
 **UART**
-- Custom Name: UART2
+- Custom Name: SERCOM
 - Requested Baudrate: 9600
 - Parity: None
 - Data Size: 8
@@ -95,66 +109,47 @@ MDFU Client and Application projects have to be configured according to [Client 
 
 [![UART_Pins](images/UARTPortsSetup.PNG)](images/UARTPortsSetup.PNG)
 
-**8-Bit MDFU Client**
-- Communication Protocol: UART
-- Application Start Address: Different for each project based on the verification selected
-- Device ID: 0x7920
-- I/O Pin Indicator: Enabled
-- I/O Pin Entry: Enabled
-- Memory Verification: Assigned Based on Example Project Naming Convention
-
-**Tip**: The easiest way to get the correct device ID is to connect your device and use the **Refresh Debug Tool Status** button on the Dashboard left panel in MPLAB X IDE. Upon clicking the button and selecting the correct PKOB Nano, in the Output window it prints out the device ID and other information.
-
-[![Refresh Debug Tool Status](images/RefreshDebugToolStatus.png)](images/RefreshDebugToolStatus.png)
-
-*Example for CRC32 Verification*
-
 **8-Bit MDFU Client I/O**
 - BOOT INDICATE: RF2
 - BOOT ENTRY: RF3
 
 [![IO-Pins](images/IOPortSetup.PNG)](images/IOPortSetup.PNG)
 - BOOT INDICATE: Start High
-- BOOT ENTRY: Weak Pullup
+- BOOT ENTRY: Weak Pull up
 
 [![IO-Settings](images/IOPinsSetup.PNG)](images/IOPinsSetup.PNG)
 
-**Updating Application Start Address**
-
-This is an important step to ensure that the bootloader and application FLASH sections are configured to provide maximum space for the application while decreasing the bootloader section to be as close to the memory consumed by the bootloader code as possible.
-
-- At this point, as mentioned in the 8-Bit MDFU Client section, this depends on the verification method used in the project. Initially, configure the application start address to be closer to the MAXSIZE to allow sufficient memory for flashing the bootloader code. Do not exceed (MAXSIZE - 4)
-[![Max Boot Size](images/MaxBootSize.png)](images/MaxBootSize.png)
-
-- After a clean and build, the bytes of memory consumed by bootloader can be observed under the Memory Summary section in the Output window
-
-[![Build Memory Consumption](images/BuildMemoryConsumption.png)](images/BuildMemoryConsumption.png)
-
-- Update the application start address to the start address of the next page in FLASH, following the memory allocation utilized by the bootloader code
-
-- Since in this example, the bootloader code consumes 0x168B bytes, the application start address can be configured to 0x2000 
-
-[![Updated Boot Size](images/UpdatedBootSize.png)](images/UpdatedBootSize.png)
-
-- After updating the application start address, final configurations must be as mentioned below 
-
-[![MDFU](images/MDFUClientSetup.PNG)](images/MDFUClientSetup.PNG)
-
 **8-Bit MDFU Client Project Properties**
-- ROM Ranges: This option is configured based on the start address of the application
+
+> **Tip**: These values can be copied from the "Linker Options" section of 8-Bit MDFU Client MCC UI.
+
+- ROM Ranges: This option is configured based on the application's start address
 - For example, if the application starts at 0x2000 then this value will reflect as `0-1FFF`
 
 [![IO-Settings](images/MemoryModelSettings.PNG)](images/MemoryModelSettings.PNG)
 
 ---
 ### [Application Setup](#application-setup)
+
+This section is consistent for any example created in this repository.
+
 [![app-builder](images/AppConfigurationOverview.PNG)](images/AppConfigurationOverview.PNG)
 
+**Clock And Configuration**
+- Set the clock and configuration bits to the same values that were set in the MDFU Client
+
+[![CLK](images/ClockSetup_App.PNG)](images/ClockSetup_App.PNG)
+
+[![CFG](images/ConfigBitsSetup_App.PNG)](images/ConfigBitsSetup_App.PNG)
+
 **I/O Pins**
+- GPIO Input: RF3
+    - Custom Name: BTN
+    - Weak Pull up: Enabled
 - GPIO Output: RF2
+    - Custom Name: LED
 
 [![app_io](images/AppPortSetup.PNG)](images/AppPortSetup.PNG)
-- Custom Name: LED
 
 [![app_io_settings](images/LEDSetup.PNG)](images/LEDSetup.PNG)
 
@@ -166,15 +161,15 @@ Linker Additional Options
 
 [![app_offset](images/AppOffset.PNG)](images/AppOffset.PNG)
 
-**Note**:*Check the table below to understand how the CRC32 option must be configured in the application projects*
+Check the table below to understand how the CRC32 option must be configured in the application projects:
 
 |Verification Scheme | Checksum Setting |
 |---- |---- |
 |Reset Vector | N/A |
 |Status Byte | N/A |
-|Checksum | C00-3FFD@3FFE,width=-2,algorithm=2,code=3F |
-|CRC-16 | C00-3FFD@3FFE,width=-2,algorithm=5,offset=FFFF,polynomial=1021,code=3F |
-|CRC-32 | C00-3FFB@3FFC,width=-4,algorithm=-5,offset=FFFFFFFF,polynomial=04C11DB7,code=3F |
+|Checksum | 2000-FFFD@FFFE,width=-2,algorithm=2 |
+|CRC-16 | 2000-FFFD@FFFE,width=-2,algorithm=5,offset=FFFF,polynomial=1021 |
+|CRC-32 | 2000-FFFB@FFFC,width=-4,algorithm=-5,offset=FFFFFFFF,polynomial=04C11DB7 |
 
 Fill Flash Memory
 - Which area to fill: Provide Range to fill
@@ -227,9 +222,14 @@ Right click, then select Clean and Build
 
 [![CleanBuild_App](images/CleanAndBuildApp.png)](images/CleanAndBuildApp.png)
 
-4. Build the Application Image File using **pyfwimagebuilder**.
+4. Build the Application Image File using [pyfwimagebuilder](https://pypi.org/project/pyfwimagebuilder/).
 
-*Hint: The configuration TOML file is generated by the MDFU Client project under \mcc_generated_files\bootloader\configurations*
+- To build the application image files, navigate to the Projects tab and right click *Important Files>`build_free_image.bat`* for Windows or *Important Files>`build_free_image.sh`* for Mac and Linux
+- Select Run
+
+[![Run_BuildScript](images/RunBuildScript.png)](images/RunBuildScript.png)
+
+> **Tip**: The configuration TOML file is generated by the MDFU Client project under `\mcc_generated_files\bootloader\configurations`
 
 **Example Command:**
 
@@ -237,19 +237,30 @@ Right click, then select Clean and Build
 
 [![build_img](images/BuildTheImage.PNG)](images/BuildTheImage.PNG)
 
-5. Use the **pymdfu** host tool to transfer the application image file to the bootloader.
+5. Use the [pymdfu](https://pypi.org/project/pymdfu/) host tool to transfer the application image file to the bootloader.
 
-*Hint: You can find the COM port of the MCU using the MPLAB Data Visualizer.*
+> **Tip**: You can find the COM port of the MCU using the MPLAB Data Visualizer.*
+
+- To run the update with the examples, navigate to the project tab and right click, *Important Files>`pymdfu_update.bat`* for Windows or *Important Files>`pymdfu_update.sh`* for Mac and Linux. Double click to open the file.
+- Edit the port number to the CDC port name that is assigned to the Curiosity Nano device
+- Then right click on the script and select Run
+
+[![UpdateScript_BL](images/runUpdateScript.PNG)](images/runUpdateScript.PNG)
 
 **Example Command:**
 
-`pymdfu update serial ./crc32.img --baudrate 9600 --port COM##`
+`pymdfu update --tool serial --image ./crc32.img --baudrate 9600 --port COM##`
 
 [![transfer_img](images/SendTheImage.PNG)](images/SendTheImage.PNG)
 
 **Application Has Been Updated Successfully**
 
 [![MDFU_AppMode](images/PIC18F56Q24_AppMode.gif)](images/PIC18F56Q24_AppMode.gif)
+
+**Example Application Features:**
+
+1. Blink the on-board LED at a rate of 200 ms.
+2. Pressing the button on the Curiosity Nano and holding it down will force entry into the bootloader, allowing a new application to be transferred.
 
 ## Summary
 
@@ -263,4 +274,4 @@ This repository demonstrates how to configure the 8-Bit MDFU Client library in M
 - [Back to Setup](#setup)
 - [Back to Operation](#operation)
 - [Back to Summary](#summary)
-- [Back to Top](#getting-started-with-the-8-bit-mdfu-client-for-pic18f56q24-using-mplab®-x)
+- [Back to Top](#getting-started-with-the-8-bit-mdfu-client-for-pic18f56q24-using-mplab-x)

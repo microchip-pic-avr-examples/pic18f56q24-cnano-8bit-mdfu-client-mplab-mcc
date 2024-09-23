@@ -1,0 +1,1 @@
+pyfwimagebuilder build -v debug -i ./dist/free/production/pic18f56q24-application-checksum.X.production.hex -c ../pic18f56q24-mdfu-client-checksum.X/mcc_generated_files/bootloader/configurations/bootloader_configuration.toml -o new_application.img

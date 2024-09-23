@@ -8,7 +8,7 @@
  * @brief This is generated driver header for pins. 
  *        This header file provides APIs for all pins selected in the GUI.
  *
- * @version Driver Version  3.1.0
+ * @version Driver Version  3.1.1
 */
 
 /*
@@ -68,6 +68,26 @@
 #define LED_SetOpenDrain()       do { ODCONFbits.ODCF2 = 1; } while(0)
 #define LED_SetAnalogMode()      do { ANSELFbits.ANSELF2 = 1; } while(0)
 #define LED_SetDigitalMode()     do { ANSELFbits.ANSELF2 = 0; } while(0)
+
+// get/set RF3 aliases
+#define BTN_TRIS                 TRISFbits.TRISF3
+#define BTN_LAT                  LATFbits.LATF3
+#define BTN_PORT                 PORTFbits.RF3
+#define BTN_WPU                  WPUFbits.WPUF3
+#define BTN_OD                   ODCONFbits.ODCF3
+#define BTN_ANS                  ANSELFbits.ANSELF3
+#define BTN_SetHigh()            do { LATFbits.LATF3 = 1; } while(0)
+#define BTN_SetLow()             do { LATFbits.LATF3 = 0; } while(0)
+#define BTN_Toggle()             do { LATFbits.LATF3 = ~LATFbits.LATF3; } while(0)
+#define BTN_GetValue()           PORTFbits.RF3
+#define BTN_SetDigitalInput()    do { TRISFbits.TRISF3 = 1; } while(0)
+#define BTN_SetDigitalOutput()   do { TRISFbits.TRISF3 = 0; } while(0)
+#define BTN_SetPullup()          do { WPUFbits.WPUF3 = 1; } while(0)
+#define BTN_ResetPullup()        do { WPUFbits.WPUF3 = 0; } while(0)
+#define BTN_SetPushPull()        do { ODCONFbits.ODCF3 = 0; } while(0)
+#define BTN_SetOpenDrain()       do { ODCONFbits.ODCF3 = 1; } while(0)
+#define BTN_SetAnalogMode()      do { ANSELFbits.ANSELF3 = 1; } while(0)
+#define BTN_SetDigitalMode()     do { ANSELFbits.ANSELF3 = 0; } while(0)
 
 /**
  * @ingroup  pinsdriver
