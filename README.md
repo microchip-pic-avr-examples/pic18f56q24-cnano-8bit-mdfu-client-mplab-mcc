@@ -6,7 +6,7 @@
 
 This example demonstrates how to utilize MPLAB Code Configurator (MCC) generated code to set up various Microchip Device Firmware Update (MDFU) bootloader solutions for the PIC18F56Q24 Curiosity Nano Evaluation board.
 
-The MDFU is a firmware update system that employs a device-independent host application to update application firmware. The application image loaded into the host adheres to a custom file format, incorporating device and application-specific parameters necessary for the update. This repository offers a foundational setup to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano Base for Click boards™, along with instructions for executing the examples.
+The MDFU is a firmware update system that employs a device-independent host application to update application firmware. The application image loaded into the host adheres to a custom file format, incorporating device and application-specific parameters necessary for the update. This repository offers a foundational setup to configure and customize the MCC Melody 8-Bit MDFU Client library on the PIC18F56Q24 Curiosity Nano Evaluation board, along with instructions for executing the examples.
 
 This example demonstrates:
 - How to configure the 8-Bit MDFU Client library in MCC Melody for different verification schemes
@@ -39,7 +39,7 @@ This example demonstrates:
 
 ## Setup
 
-The following project setup steps demonstrate the basic configuration for setting up the 8-Bit MDFU Client with Universal Asynchronous Receiver-Transmitter (UART) communication. The configuration bits, clock, Non-Volatile Memory (NVM), and General Purpose Input/Output (GPIO) settings will be consistent across all examples in this repository and any deviations from this setup due to the chosen communication protocol will be described individually later in this section.
+The following project setup steps demonstrate the basic configuration for setting up the 8-Bit MDFU Client with Universal Asynchronous Receiver-Transmitter (UART) communication. The configuration bits, clock, Non-Volatile Memory (NVM), and General Purpose Input/Output (GPIO) settings will be consistent across all examples in this repository, and any deviations from this setup due to the chosen communication protocol will be described individually later in this section.
 
 ### [Client Setup](#client-setup)
 [![mdfu-builder](images/ProjectConfigurationOverview.PNG)](images/ProjectConfigurationOverview.PNG)
@@ -66,7 +66,7 @@ The following project setup steps demonstrate the basic configuration for settin
 
 **8-Bit MDFU Client**
 
-This section will guide you through the setup process for UART communication. For more details on configuring and operating other communication protocols, please refer to the pages listed below:
+This section will guide you through the setup process for UART communication. For more details on configuring and operating other communication protocols, refer to the pages listed below:
 - [SPI Communication](spi/Readme.md)
 
 **8-Bit MDFU Client with UART Communication**
@@ -115,7 +115,7 @@ This section will guide you through the setup process for UART communication. Fo
 
 [![IO-Pins](images/IOPortSetup.PNG)](images/IOPortSetup.PNG)
 - BOOT INDICATE: Start High
-- BOOT ENTRY: Weak Pull up
+- BOOT ENTRY: Weak Pull-up
 
 [![IO-Settings](images/IOPinsSetup.PNG)](images/IOPinsSetup.PNG)
 
@@ -145,7 +145,7 @@ This section is consistent for any example created in this repository.
 **I/O Pins**
 - GPIO Input: RF3
     - Custom Name: BTN
-    - Weak Pull up: Enabled
+    - Weak Pull-up: Enabled
 - GPIO Output: RF2
     - Custom Name: LED
 
@@ -181,7 +181,7 @@ Fill Flash Memory
 [![app_fill](images/AppFill.PNG)](images/AppFill.PNG)
 
 ## Operation
-In this section, we will walkthrough how to run the examples in this repository. This example shows how to execute the CRC32 verification example and update the device Flash memory with the CRC32 application image to demonstrate a successful device firmware update (DFU).
+This section explains how to run the examples in this repository. This example shows how to execute the CRC32 verification example and update the device Flash memory with the CRC32 application image to demonstrate a successful device firmware update (DFU).
 
 **8-Bit MDFU Client Operation**
 
@@ -197,7 +197,7 @@ In this section, we will walkthrough how to run the examples in this repository.
 
 [![CleanBuild](images/CleanAndBuildMDFU.png)](images/CleanAndBuildMDFU.png)
 
-4. Program the MDFU Client Project
+4. Program the MDFU Client Project.
 
 [![ProgramMDFU](images/ProgramMDFU.PNG)](images/ProgramMDFU.PNG)
 
@@ -239,7 +239,7 @@ Right click, then select Clean and Build
 
 5. Use the [pymdfu](https://pypi.org/project/pymdfu/) host tool to transfer the application image file to the bootloader.
 
-> **Tip**: You can find the COM port of the MCU using the MPLAB Data Visualizer.*
+> **Tip**: You can find the COM port of the MCU using the MPLAB&reg; Data Visualizer.
 
 - To run the update with the examples, navigate to the project tab and right click, *Important Files>`pymdfu_update.bat`* for Windows or *Important Files>`pymdfu_update.sh`* for Mac and Linux. Double click to open the file.
 - Edit the port number to the CDC port name that is assigned to the Curiosity Nano device
