@@ -35,7 +35,7 @@ This example demonstrates:
 
 - PIC18F56Q24 Curiosity Nano [(EV01E86A)](https://www.microchip.com/en-us/development-tool/ev01e86a)
 
-[![PIC18F56Q24_CNano](images/230928-MCU8-PHOTO-EV01E86A-Front-Transparent.png)](images/230928-MCU8-PHOTO-EV01E86A-Front-Transparent.png)
+[![PIC18F56Q24_CNano](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)](images/230928-mcu8-photo-ev01e86a-front-transparent.PNG)
 
 ## Setup
 
@@ -138,9 +138,9 @@ This section is consistent for any example created in this repository.
 **Clock And Configuration**
 - Set the clock and configuration bits to the same values that were set in the MDFU Client
 
-[![CLK](images/ClockSetup_App.PNG)](images/ClockSetup_App.PNG)
+[![CLK](images/ClockSetup_App.png)](images/ClockSetup_App.png)
 
-[![CFG](images/ConfigBitsSetup_App.PNG)](images/ConfigBitsSetup_App.PNG)
+[![CFG](images/ConfigBitsSetup_App.png)](images/ConfigBitsSetup_App.png)
 
 **I/O Pins**
 - GPIO Input: RF3
