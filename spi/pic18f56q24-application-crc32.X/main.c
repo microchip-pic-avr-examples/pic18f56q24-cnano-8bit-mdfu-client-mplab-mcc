@@ -7,11 +7,13 @@
  *
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version MAIN Driver Version 1.0.2
+ *
+ * @version Package Version: 3.1.2
  */
 
 /*
-ï¿½ [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip
     software and any derivatives exclusively with Microchip products.
@@ -51,7 +53,6 @@ applicationFooter __attribute__((used, section("application_footer"))) = 0xFFFFF
 int main(void)
 {
     SYSTEM_Initialize();
-
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     // Use the following macros to:
@@ -63,7 +64,7 @@ int main(void)
     //INTERRUPT_GlobalInterruptDisable();
 
 
-    while (1)
+    while(1)
     {
         LED_Toggle();
         DELAY_milliseconds(200);

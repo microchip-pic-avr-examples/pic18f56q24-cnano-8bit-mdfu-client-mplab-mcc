@@ -67,7 +67,8 @@ The following project setup steps demonstrate the basic configuration for settin
 **8-Bit MDFU Client**
 
 This section will guide you through the setup process for UART communication. For more details on configuring and operating other communication protocols, refer to the pages listed below:
-- [SPI Communication](spi/Readme.md)
+- [SPI Communication](spi/README.md)
+- [I<sup>2</sup>C Communication](i2c/README.md)
 
 **8-Bit MDFU Client with UART Communication**
 

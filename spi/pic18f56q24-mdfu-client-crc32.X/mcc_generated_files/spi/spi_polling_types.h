@@ -5,14 +5,16 @@
  *
  * @defgroup spi SPI
  *
- * @version SPI Driver Version v3.1.1.
+ * @version SPI Driver Version v3.2.0.
+ * 
+ * @version SPI Package Version v5.2.0.
  *
  * @brief This header file provides type definitions for the SPI module operation in Polling mode.
  *
 */
 
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -50,4 +52,4 @@ typedef struct
     uint8_t clksel;
 } spi_configuration_t;
 
-#endif /* SPI_POLLING_TYPES_H */
+#endif // SPI_POLLING_TYPES_H

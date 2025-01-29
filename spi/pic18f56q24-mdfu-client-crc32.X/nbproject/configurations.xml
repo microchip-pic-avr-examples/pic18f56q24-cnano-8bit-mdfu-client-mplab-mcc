@@ -24,6 +24,7 @@
               <itemPath>mcc_generated_files/bootloader/library/core/bl_app_verify.h</itemPath>
               <itemPath>mcc_generated_files/bootloader/library/core/bl_memory.h</itemPath>
               <itemPath>mcc_generated_files/bootloader/library/core/bl_core.h</itemPath>
+              <itemPath>mcc_generated_files/bootloader/library/core/bl_interrupt.h</itemPath>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>
@@ -86,6 +87,7 @@
               <itemPath>mcc_generated_files/bootloader/library/core/bl_app_verify.c</itemPath>
               <itemPath>mcc_generated_files/bootloader/library/core/bl_memory.c</itemPath>
               <itemPath>mcc_generated_files/bootloader/library/core/bl_core.c</itemPath>
+              <itemPath>mcc_generated_files/bootloader/library/core/bl_interrupt.c</itemPath>
             </logicalFolder>
           </logicalFolder>
         </logicalFolder>

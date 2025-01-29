@@ -7,12 +7,14 @@
  *
  * @brief This header file provides API prototypes for the SPI1 driver.
  *
- * @version SPI1 Driver Version v3.1.1.
+ * @version SPI1 Driver Version v3.2.0.
+ * 
+ * @version SPI1 Package Version v5.2.0.
  *
 */
 
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -77,6 +79,11 @@ extern const struct SPI_INTERFACE SERCOM;
 #define SERCOM_ByteExchange SPI1_ByteExchange
 /**
  * @ingroup  spi1
+ * @brief    This macro defines the Custom Name for \ref SPI1_Transfer API
+ */
+#define SERCOM_Transfer SPI1_Transfer
+/**
+ * @ingroup  spi1
  * @brief    This macro defines the Custom Name for \ref SPI1_BufferExchange API
  */
 #define SERCOM_BufferExchange SPI1_BufferExchange
@@ -125,7 +132,7 @@ typedef enum
 
 /**
  * @ingroup spi1
- * @brief Initializes the SPI1 module.
+ * @brief Initializes the SPI1 module based on the configurable options in the MPLABÂ® Code Configurator (MCC) Melody UI.
  * @param None.
  * @return None.
  */
@@ -133,7 +140,7 @@ void SPI1_Initialize(void);
 
 /**
  * @ingroup spi1
- * @brief Deinitializes the SPI1 module.
+ * @brief Sets the registers to Power-on Reset values.
  * @param None.
  * @return None.
  */
@@ -156,6 +163,16 @@ bool SPI1_Open(uint8_t spiConfigIndex);
  * @return None.
  */
 void SPI1_Close(void);
+
+/**
+ * @ingroup spi1
+ * @brief Exchanges the buffer using the SPI protocol with separate transmit and receive buffer locations. This function is blocking in Polling mode.
+ * @param [in] *txBuffer Buffer address of the data to be transmitted during exchange
+ * @param [in] *rxBuffer Buffer address of the data to be received during exchange
+ * @param [in] bufferSize Size of the data in bytes
+ * @return None.
+ */
+void SPI1_Transfer(const void * txBuffer, void * rxBuffer, size_t bufferSize);
 
 /**
  * @ingroup spi1
@@ -204,7 +221,7 @@ void SPI1_ByteWrite(uint8_t byteData);
  * @ingroup spi1
  * @brief Receives one byte using the SPI protocol.
  * @param None.
- * @return Received data byte.
+ * @return Received data byte
  */
 uint8_t SPI1_ByteRead(void);
 
@@ -226,4 +243,4 @@ bool SPI1_IsRxReady(void);
  */
 bool SPI1_IsTxReady(void);
 
-#endif //SPI1_H
+#endif // SPI1_H
